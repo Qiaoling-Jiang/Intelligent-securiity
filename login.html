@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--以上代码告诉IE浏览器，IE8/9及以后的版本都会以最高版本IE来渲染页面-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>登录页面</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="container-item">
+        <form action="index.html" method="post">
+            <div class="form-group">
+
+                <h3 style="text-align: center;color: #808080;font-family: 'Microsoft YaHei UI', sans-serif">智能安防登录</h3>
+                <div class="input_outer">
+                    <span class="user"></span>
+                    <input type="text" class="username" placeholder="请输入账户" required>
+                </div>
+                <div class="input_outer">
+                    <span class="pwd"></span>
+                    <input type="text" class="username" placeholder="请输入密码" required>
+                </div>
+                <button class="submit" type="button" id="submit">登录</button>
+                <div class="alert net_error">
+                    <h4>登录失败</h4>
+                    <p style="float: left;margin: 10px">请您稍后重试</p>
+                    <hr style="color: #000000;width: 100%;border-top: 2px solid #eee">
+                    <button class="definite">确定</button>
+                </div>
+                <div class="alert user_error">
+                    <h4>登录失败</h4>
+                    <p style="float: left;margin: 10px">用户名或密码错误</p>
+                    <hr style="color: #000000;width: 100%;border-top: 2px solid #eee">
+                    <button class="definite">确定</button>
+                </div>
+
+
+                <a href="register.html" class="forget">没有账号？去注册</a>
+
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script>
+    $(function () {
+        $(".submit").click(function () {
+            //点击登录按钮，如果用户名和密码正确则能成功登录
+            // if (){                //如果用户名和密码正确，则跳转至主页
+
+            // } else if(){           //如果用户名或者密码错误，弹出方框
+            // $(".user_error").css("display","block");
+            // }else {
+                // $(".alert").css("display","block");
+            // }
+
+
+            $(".user_error").css("display","block");
+            $(".alert").css("display","block");
+        });
+        $(".definite").click(function () {
+            $(this).parent().css("display","none");
+
+
+        });
+
+
+
+
+    });
+</script>
+
+
+</body>
+</html>

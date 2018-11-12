@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="container-item">
+        <form action="login.html" method="post" id="commentForm" class="cmxform">
+            <div class="form-group" style="text-align: center">
+                <h3 style="text-align: center;color: #808080;margin-bottom: 20px">智能安防注册</h3>
+
+                <input class="form-control input" id="name" type="text" placeholder="用户名（2个以上汉字或字母）" required minlength="2">
+                <span class="name_error">*</span>
+                <input class="form-control input" id="password1" type="password" placeholder="输入密码（6位以上字母或数字）" required>
+                <span class="pwd1_error">*</span>
+                <input class="form-control input" id="password2" type="password" placeholder="确认密码">
+                <span class="pwd2_error">*</span>
+                <input class="form-control input" id="tel" type="tel" placeholder="请输入手机号（1开头的11位数字）">
+                <span class="tel_error">*</span>
+                <button class="submit" type="button">注册</button>
+
+                <div class="alert">
+                    <h4>注册失败</h4>
+                    <p style="float: left;margin: 10px">请您稍后重试</p>
+                    <hr style="color: #000000;width: 100%;border-top: 2px solid #eee">
+                    <button class="definite">确定</button>
+                </div>
+                <div class="tel_repeat">
+                    <h4>注册失败</h4>
+                    <p style="float: left;margin: 10px">手机号已存在</p>
+                    <hr style="color: #000000;width: 100%;border-top: 2px solid #eee">
+                    <button class="definite">确定</button>
+                </div>
+
+
+                <a href="login.html" class="log">已有账号，去登陆</a>
+
+
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+    //    用户名检测
+        var patter_special_char = /[,;；，《》.<>~`!@#$%^&*()_+-= ]+/;
+        $("#name").on('blur',function () {
+            var name = $(this).val();
+            if (patter_special_char.test(name)){
+                $(".name_error").show();
+            }else{
+                $(".name_error").hide();
+            }
+        });
+    //    密码验证
+        var pwd_test = /^(?!\d+$)(?![A-Za-z]+$)[a-zA-Z0-9]{6,}$/;
+        $("#password1").on('blur',function () {
+            var pwd1=$(this).val();
+            if (!pwd_test.test(pwd1)){
+                $(".pwd1_error").show();
+            } else{
+                $(".pwd2_error").hide();
+            }
+        });
+
+    //    密码一致验证
+
+        $("#password2").on('blur',function () {
+            var pwd1 = $("#password1").val();
+            var pwd2 = $("#password2").val();
+            if (pwd1!==pwd2){
+                $(".pwd2_error").show();
+            }else{
+                $(".pwd2_error").hide();
+            }
+        });
+
+        var tel_test = /(1[3-9]\d{9}$)/;
+        $("#tel").on('blur',function(){
+            var tel = $(this).val();
+            if (!tel_test.test(tel)) {
+                $(".tel_error").show();
+            }else{
+                $(".tel_error").hide();
+            }
+        });
+
+        
+        $(".submit").click(function () {
+
+            $(".alert").css("display","block");    //注册失败
+            $(".tel_repeat").css("display","block");    //手机号重复注册失败
+        });
+        $(".definite").click(function () {
+            $(this).parent().css("display","none");
+        });
+
+
+    });
+</script>
+
+
+</body>
+</html>
