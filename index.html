@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>智能安防家居</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   <!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
+   <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+</head>
+<body>
+	<div style="width: 100%;min-width: 1349px;">
+		<div style="width: auto;height: 100px;float: left">
+    <h1 class="title">智能安防</h1>
+</div>
+<ul id="myTab" class="nav nav-tabs nav-style">
+
+    <li class="active">
+        <a href="#home" data-toggle="tab">我的家</a>
+    </li>
+    <li><a href="#photo" data-toggle="tab">家庭相册</a></li>
+    <li><a href="#share" data-toggle="tab">关于我们</a></li>
+    <li><a href="#contact" data-toggle="tab">联系我们</a></li>
+</ul>
+<i class="xian"></i>
+	</div>
+
+
+
+<div id="myTabContent" class="tab-content">
+
+    <div id="home" class="tab-pane fade in active">
+
+        <!--新闻轮播-->
+        <div id="myCarousel" class="carousel slide mycarousel" >
+            <!--轮播指标-->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" ></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <!--轮播项目-->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/carousel/ISslide1.png" alt="First Slide">
+                    <p class="new">物联网技术推动报警行业迈向综合解决时代方案</p>
+                </div>
+                <div class="item">
+                    <img src="img/carousel/ISslide2.jpg" alt="Second Slide">
+                    <p class="new">视频需求分析软件市场需求正旺</p>
+                </div>
+                <div class="item">
+                    <img src="img/carousel/ISslide3.jpg" alt="Third Slide">
+                    <p class="new">武汉年内将打造百个物联网平安智慧小区</p>
+                </div>
+                <div class="item">
+                    <img src="img/carousel/ISslide4.jpg" alt="Third Slide">
+                    <p class="new">TUV莱茵深圳物联网技术评估中心10月正式启用</p>
+                </div>
+            </div>
+            <!--轮播导航-->
+            <a href="#myCarousel" class="left carousel-control" role="button" data-slide="prev"> </a>
+            <a href="#myCarousel" class="right carousel-control" role="button" data-slide="next"> </a>
+
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h1 style="text-align: center">当前室温为</h1>
+                <hr style="color: #808080; width: auto;height: 2px">
+                <div style="width: auto;height: auto;">
+                    <img class="icon" src="img/icon/temper.png" alt="">
+                    <p class="temperature">13°</p>
+                </div>
+
+            </div>
+            <div class="flex-item">
+                <h1 style="text-align: center">当前湿度为</h1>
+                <hr style="color: #808080; width: auto;height: 2px">
+                <div style="width: auto;height: auto;">
+                    <img class="icon" src="img/icon/humility.png" alt="">
+                    <p class="humility">97%</p>
+                </div>
+            </div>
+            <div class="flex-item">
+                <h1 style="text-align: center">室内是否有人</h1>
+                <hr style="color: #808080; width: auto;height: 2px">
+                <div style="width: auto;height: auto;">
+                    <img class="icon" src="img/icon/human.png" alt="">
+                    <p class="human">无</p>
+                </div>
+            </div>
+            
+            <br/>
+
+        </div>
+        <div class="flex-container">
+        	<div class="flex-item shine">
+                <h1 style="text-align: center">灯光关闭</h1>
+                <hr style="color: #808080; width: auto;height: 2px">
+                <div style="width: auto;height: auto;">
+                    <img class="icon_btn" id="light_btn" src="img/icon/light_0.png" alt="">
+                </div>
+            </div>
+
+            <div class="flex-item shine">
+                <h1 style="text-align: center">未报警</h1>
+                <hr style="color: #808080; width: auto;height: 2px">
+                <div style="width: auto;height: auto;margin: auto;">
+                    <img class="icon_btn" id="jingbao_btn" src="img/icon/jingbao_0.png" alt="">
+                </div>
+            </div>
+            <div class="alert net_error">
+                <h4>尚未登录</h4>
+                <p style="float: left;margin: 10px">请您先登录</p>
+                <hr style="color: #000000;width: 100%;border-top: 2px solid #eee">
+                <a class="definite" id="log_btn" href="login.html">登陆</a>
+                <button class="definite close_btn" >确定</button>
+            </div>
+        </div>
+        <div id="line-chart" class="line-chart"></div>
+
+        <button class="btn btn-primary shuaxin" type="button" id="shuaxin">刷新</button>
+        <div style="height: 100px;width: 100%">
+
+        </div>
+
+    </div>
+
+
+    <div id="photo" class="tab-pane fade" >
+        <div class="transparent">
+
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a href="img/IS-pic-1.jpg">
+                    <img src="img/IS-pic-1.jpg" alt=""/>
+                </a>
+                <div class="desc">2017/10/01</div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a href="img/IS-pic-2.jpg">
+                    <img src="img/IS-pic-2.jpg" alt=""/>
+                </a>
+                <div class="desc">2017/10/02</div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a href="img/IS-pic-3.jpg">
+                    <img src="img/IS-pic-3.jpg" alt=""/>
+                </a>
+                <div class="desc">2017/10/03</div>
+            </div>
+        </div>
+    </div>
+    <div id="share" class="tab-pane fade">
+        <div class="flex-container">
+            <div class="about">
+                <h1>热爱开发与技术，请期待未来的系列产品</h1>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="tab-pane fade">
+        <div class="contact-container">
+            <div class="contact-item">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="form-control input" placeholder="请输入姓名" id="name"/>
+                        
+                        <input type="text" class="form-control input" placeholder="请输入联系方式" id="contact-all"/>
+
+                        <textarea name="" placeholder="请输入你的意见" class="form-control textarea" cols="30" rows="10"
+                                  id="idea"></textarea>
+                        <button class="submit" type="submit">提交</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script src="js/echarts.js"></script>
+<script>
+  $(function () {
+     $("#shuaxin").on('click', function () {
+          refresh();
+     });
+     
+     $("#light_btn").on('click',function(){
+         $(".net_error").css("display","block");
+     	if ($(this).attr('src')==='img/icon/light_0.png') {
+     		$(this).attr("src","img/icon/light_1.png");
+     		var $light  = $(this).parent().parent().children().eq(0);
+     		$light.html("灯光开启");
+     		$light.css("color","red");
+
+     		
+     	} else{
+     		$(this).attr("src","img/icon/light_0.png");
+     		var $light  = $(this).parent().parent().children().eq(0);
+     		$light.html("灯光关闭");
+     		$light.css("color","black");
+     	}
+  });
+     $(".close_btn").click(function () {
+         $(".net_error").css("display","none");
+     });
+  $("#jingbao_btn").on('click',function(){
+
+      $(".net_error").css("display","block");
+     	if ($(this).attr('src')==='img/icon/jingbao_0.png') {
+     		$(this).attr("src","img/icon/jingbao_1.png");
+     		var $jingbao = $(this).parent().parent().children().eq(0)
+     		$jingbao.html("已报警");
+     		$jingbao.css("color","red");
+     	} else{
+     		$(this).attr("src","img/icon/jingbao_0.png");
+     		var $jingbao = $(this).parent().parent().children().eq(0)
+     		$jingbao.html("未报警");
+     		$jingbao.css("color","black");
+     	}		
+     		
+     });
+  });
+
+    function refresh(){
+        window.location.reload();
+    }
+
+    var myChart = echarts.init(document.getElementById('line-chart'));
+    var option = {
+        backgroundColor:'white',
+        title:{
+            text:'温湿度'
+        },
+        tooltip:{
+
+        },
+        /*图例*/
+        legend:{
+            data:['温度(单位:°C)','湿度(单位:%)']
+        },
+        /*横轴*/
+       /* xAxis:{
+            name:'日期',
+            data:['2018/10/01','2018/10/02','2018/10/03','2018/10/04','2018/10/07'],
+
+        },*/
+        xAxis:[{
+            axisLabel: {
+                rotate: 30,
+                interval: 0
+            },
+           /* axisLine: {
+                lineStyle: {
+                    color: 'red'
+                }
+            },*/
+            type: 'category',
+            name: '日期',
+            data: ['2018/10/01', '2018/10/02', '2018/10/03', '2018/10/04', '2018/10/05', '2018/10/06']
+        }],
+
+        yAxis:{
+
+        },
+        series:[{
+             name:'温度(单位:°C)',
+//            折线图
+            type:'line',
+            data:[28,26,30,32,34,30]
+        },{
+            name:'湿度(单位:%)',
+            type:'line',
+            data:[97,96,97,98,97,95]
+        }]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>
